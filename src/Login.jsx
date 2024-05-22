@@ -3,8 +3,10 @@ import UAParser from 'ua-parser-js';
 
 const Login = () => {
   const [username, setUsername] = useState('');
+  const [data, setData] = useState({});
   const [location, setLocation] = useState({ latitude: null, longitude: null });
-
+  
+  console.log(data)
   const handleLogin = () => {
     const parser = new UAParser();
     const deviceInfo = parser.getResult();
@@ -24,6 +26,8 @@ const Login = () => {
       },
       location,
     };
+
+    setData(loginData)
 
     console.log('Login Data:', loginData);
   };
@@ -53,13 +57,26 @@ const Login = () => {
 
   useEffect(() => {
     getLocation();
-  }, []);
+  }, [data]);
 
 
 
   return (
     <div>
       <h2>Login</h2>
+      <div>
+
+        <p>Latitude: {data?.name}</p>
+        <p>Latitude: {location.latitude}</p>
+        <p>Longitude: {location.longitude}</p>
+        <p>Longitude: {data.device.browser}</p>
+        <p>Longitude: {data.device.browserVersion}</p>
+        <p>Longitude: {data.device.deviceModel}</p>
+        <p>Longitude: {data.device.deviceType}</p>
+        <p>Longitude: {data.device.deviceVendor}</p>
+        <p>Longitude: {data.device.os}</p>
+        <p>Longitude: {data.device.osVersion}</p>
+      </div>
       <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
         <div>
           <label>
