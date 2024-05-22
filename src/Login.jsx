@@ -67,15 +67,15 @@ const Login = () => {
       <div>
 
         <p>Latitude: {data?.name}</p>
-        <p>Latitude: {location.latitude}</p>
-        <p>Longitude: {location.longitude}</p>
-        <p>Longitude: {data.device.browser}</p>
-        <p>Longitude: {data.device.browserVersion}</p>
-        <p>Longitude: {data.device.deviceModel}</p>
-        <p>Longitude: {data.device.deviceType}</p>
-        <p>Longitude: {data.device.deviceVendor}</p>
-        <p>Longitude: {data.device.os}</p>
-        <p>Longitude: {data.device.osVersion}</p>
+        <p>Latitude: {location?.latitude}</p>
+        <p>Longitude: {location?.longitude}</p>
+        <p>Browser: {data?.device?.browser}</p>
+        <p>Browser Version: {data?.device?.browserVersion}</p>
+        <p>Device Model: {data?.device?.deviceModel}</p>
+        <p>Device Type: {data?.device?.deviceType}</p>
+        <p>Device Vendor: {data?.device?.deviceVendor}</p>
+        <p>Device OS: {data?.device?.os}</p>
+        <p>Os Version: {data?.device?.osVersion}</p>
       </div>
       <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
         <div>
